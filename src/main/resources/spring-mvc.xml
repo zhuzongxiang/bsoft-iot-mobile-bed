@@ -6,7 +6,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd http://www.alibaba.com/schema/stat http://www.alibaba.com/schema/stat.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.bsoft.com.cn/schema/ssdev http://www.bsoft.com.cn/schema/ssdev/ssdev.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
     <import resource="classpath:ctd/mvc/spring-mvc.xml"/>
 
-    <context:component-scan base-package="com.bsoft.iot.emos.*"/>
+    <context:component-scan base-package="com.bsoft.iot.bed.*"/>
     <mvc:annotation-driven />
     <aop:aspectj-autoproxy proxy-target-class="true" expose-proxy="true"/>
     <bean id="mvcJSONRequester" class="ctd.mvc.controller.support.JSONRequester"/>

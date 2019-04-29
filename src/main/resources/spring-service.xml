@@ -6,7 +6,7 @@
 						http://www.bsoft.com.cn/schema/ssdev
 						http://www.bsoft.com.cn/schema/ssdev/ssdev.xsd">
 
-    <applicationDomain name="mobile-bed" packagePrefix="com.bsoft.iot" serverId="mobile-bed"
+    <applicationDomain name="bed" packagePrefix="com.bsoft.iot" serverId="bed"
                        registryAddress="zookeeper://10.8.0.82:2181" zkAuth="admin:admin"/>
     <connector url="tcp://0.0.0.0:9010?codec=hessian">
         <filter id="urt"/>

@@ -23,7 +23,7 @@
 
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
 
-        <property name="url" value="jdbc:mysql://10.8.0.82:3306/iot_emos?useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=false"/>
+        <property name="url" value="jdbc:mysql://10.8.0.82:3306/iot_bed?useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=false"/>
         <property name="username" value="root"/>
         <property name="password" value=""/>
         <property name="proxyFilters">
@@ -50,7 +50,7 @@
         <property name="dataSource" ref="dataSource"/>
         <property name="packagesToScan">
             <array>
-                <value>com.bsoft.iot.emos.entity</value>
+                <value>com.bsoft.iot.bed.entity</value>
             </array>
         </property>
         <property name="hibernateProperties">
