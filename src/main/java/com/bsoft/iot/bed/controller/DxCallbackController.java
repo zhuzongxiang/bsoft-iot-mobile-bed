@@ -40,7 +40,114 @@ public class DxCallbackController {
         JSONObject jsonObject = JSONObject.parseObject(JSONObject.toJSONString(json));
         return json.toString();
     }
-
+    /**
+     * 添加新设备
+     *
+     * @param json
+     * @return
+     */
+    @PostMapping("/deviceAdded")
+    public String deviceAdded(@RequestBody JSONObject json) {
+        LOGGER.info("modifyDeviceInfo_NotifyMessage is {}", json);
+        JSONObject jsonObject = JSONObject.parseObject(JSONObject.toJSONString(json));
+        return json.toString();
+    }
+    /**
+     * 删除设备
+     *
+     * @param json
+     * @return
+     */
+    @PostMapping("/deviceDeleted")
+    public String deviceDeleted(@RequestBody JSONObject json) {
+        LOGGER.info("modifyDeviceInfo_NotifyMessage is {}", json);
+        JSONObject jsonObject = JSONObject.parseObject(JSONObject.toJSONString(json));
+        return json.toString();
+    }
+    /**
+     * 设备事件
+     *
+     * @param json
+     * @return
+     */
+    @PostMapping("/deviceEvent")
+    public String deviceEvent(@RequestBody JSONObject json) {
+        LOGGER.info("modifyDeviceInfo_NotifyMessage is {}", json);
+        JSONObject jsonObject = JSONObject.parseObject(JSONObject.toJSONString(json));
+        return json.toString();
+    }
+    /**
+     * 消息确认
+     *
+     * @param json
+     * @return
+     */
+    @PostMapping("/messageConfirm")
+    public String messageConfirm(@RequestBody JSONObject json) {
+        LOGGER.info("modifyDeviceInfo_NotifyMessage is {}", json);
+        JSONObject jsonObject = JSONObject.parseObject(JSONObject.toJSONString(json));
+        return json.toString();
+    }
+    /**
+     * 响应命令
+     *
+     * @param json
+     * @return
+     */
+    @PostMapping("/commandRsp")
+    public String commandRsp(@RequestBody JSONObject json) {
+        LOGGER.info("modifyDeviceInfo_NotifyMessage is {}", json);
+        JSONObject jsonObject = JSONObject.parseObject(JSONObject.toJSONString(json));
+        return json.toString();
+    }
+    /**
+     * 设备信息
+     *
+     * @param json
+     * @return
+     */
+    @PostMapping("/serviceInfoChanged")
+    public String serviceInfoChanged(@RequestBody JSONObject json) {
+        LOGGER.info("modifyDeviceInfo_NotifyMessage is {}", json);
+        JSONObject jsonObject = JSONObject.parseObject(JSONObject.toJSONString(json));
+        return json.toString();
+    }
+    /**
+     * 规则事件
+     *
+     * @param json
+     * @return
+     */
+    @PostMapping("/ruleEvent")
+    public String ruleEvent(@RequestBody JSONObject json) {
+        LOGGER.info("modifyDeviceInfo_NotifyMessage is {}", json);
+        JSONObject jsonObject = JSONObject.parseObject(JSONObject.toJSONString(json));
+        return json.toString();
+    }
+    /**
+     * 设备绑定激活
+     *
+     * @param json
+     * @return
+     */
+    @PostMapping("/bindDevice")
+    public String bindDevice(@RequestBody JSONObject json) {
+        LOGGER.info("modifyDeviceInfo_NotifyMessage is {}", json);
+        JSONObject jsonObject = JSONObject.parseObject(JSONObject.toJSONString(json));
+        return json.toString();
+    }
+    /**
+     * 设备数据批量变化
+     *
+     * @param json
+     * @return
+     */
+    @PostMapping("/deviceDatasChanged")
+    public String deviceDatasChanged(@RequestBody JSONObject json) {
+        LOGGER.info("modifyDeviceInfo_NotifyMessage is {}", json);
+        JSONObject jsonObject = JSONObject.parseObject(JSONObject.toJSONString(json));
+        return json.toString();
+    }
     @GetMapping("/open")
     public String open() {
         try {
