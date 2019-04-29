@@ -1,0 +1,30 @@
+@CHARSET "UTF-8";
+.emos-portal{
+    margin: 0px;
+    height: 100vh;
+}
+
+.emos-portal a{
+    text-decoration: none;
+}
+
+.emos-portal .portal-container{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.emos-portal .card{
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+.widget-body {
+    background-color: #E9EDE9;
+    overflow: hidden;
+    overflow-y: hidden!important;
+}
+
+.widget-header{
+    border-bottom: none;
+}

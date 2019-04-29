@@ -1,0 +1,26 @@
+<div class="quick">
+    <div class="container">
+        <el-row class="history">
+            <el-col>
+                <div class="titles">配置</div>
+                <el-button type="primary" size="small" @click="clickHistory">历史记录</el-button>
+            </el-col>
+        </el-row>
+
+        <el-row class="contents">
+            <el-card class="content" shadow="hover" v-for="(item, index) in list" :key="index">
+                <div class="title">{{ item.groupName }}</div>
+                <el-col class="card">
+                    <el-button
+                            type="primary"
+                            plain
+                            v-for="(items, indexs) in item.item"
+                            @click="clickPerform(items)"
+                            :key="indexs">
+                        {{ items.shortName }}
+                    </el-button>
+                </el-col>
+            </el-card>
+        </el-row>
+    </div>
+</div>

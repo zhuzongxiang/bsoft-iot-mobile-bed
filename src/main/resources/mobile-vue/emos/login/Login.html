@@ -1,0 +1,13 @@
+<div class="emos-login">
+    <div class="login-form">
+        <v-text-field id="tenantId" label="组织" v-model="formData.tenantId" ></v-text-field>
+        <v-text-field id="uid" label="用户名" v-model="formData.uid" ></v-text-field>
+        <v-text-field id="pwd" label="密码" v-model="formData.pwd" type="password"></v-text-field>
+    </div>
+    <v-btn  depressed large color="primary"  @click="onLoginBtnClk">
+        <i class="zmdi zmdi-arrow-right"></i>
+        登陆
+    </v-btn>
+    <span>{{wxVersion}}</span>
+</div>
+

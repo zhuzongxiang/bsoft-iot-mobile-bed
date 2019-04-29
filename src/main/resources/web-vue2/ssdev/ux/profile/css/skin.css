@@ -1,0 +1,70 @@
+.skin-list .back-forward{
+	height:40px;
+	line-height:40px;
+	background: #f8f8f8;
+	opacity:0.6;
+	text-align: center;
+}
+.skin-list .back-forward i{
+	margin-top: 3px;
+	font-size: 30px;
+	margin-right: 6px;
+	vertical-align: top;
+}
+.skin-list .back-forward>a{
+	margin-left: 15px;
+	color: #000;
+	height: 100%;
+	display: inline-block;
+	font-size: 14px;
+	float:left;
+	text-decoration: none;
+}
+.skin-list .back-forward .skin-text{
+	color: #000;
+	font-size:14px;
+	margin-left: -48px;
+}
+.skin-list ul {
+	width: 100%;
+	height: 100%;
+	padding: 10px;
+}
+
+.skin-list li {
+	display: block;
+	float: left;
+	position: relative;
+	text-align: center;
+}
+.skin-list li div {
+	margin:7px;
+	width: 70px;
+	height: 70px;
+	cursor: pointer;
+	position: relative;
+	border-radius: 3px;
+	box-shadow: 0 0 5px 2px #dcdcdc;
+}
+
+.skin-list li div img {
+	width: 24px;
+	height: 24px;
+	position: absolute;
+	right: -6px;
+	top: -6px;
+}
+
+.skin-list li span {
+	position: relative;
+	top:5px;
+}
+.skin-list{
+	max-height: 323px;
+	overflow: hidden;
+}
+.skin-list>div{
+	width:304px;
+	max-height:290px;
+	overflow-y: scroll;
+}

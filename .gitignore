@@ -1,0 +1,13 @@
+.svn/
+target/
+.settings/
+.classpath
+.project
+.myeclipse
+.DS_Store*
+*.iml
+*.class
+.idea
+/bin/
+WEB-INF/logs/
+*.less

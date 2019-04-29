@@ -1,0 +1,58 @@
+#emos-profile{
+    display:block;
+    height: 60px;
+    padding-left: 12px;
+    vertical-align: middle;
+    background-color: #f7f7f7;
+    -webkit-user-select: none;
+    cursor: pointer;
+    margin-top: 0px;
+}
+
+#emos-profile img{
+    position: absolute;
+    top: 9px;
+    width: 42px;
+    border-radius: 50%;
+    transition: all;
+    transition-duration: 400ms;
+}
+
+#emos-profile img:hover{
+    top:4px;
+    width: 52px;
+    box-shadow: 0px 1px 2px #777777;
+}
+
+#emos-profile>span{
+    position: absolute;
+    font-size: 14px;
+}
+
+#user-name{
+    font-weight: 500;
+    left: 68px;
+    top: 10px;
+}
+
+#organ-name{
+    font-weight: 300;
+    font-size: 12px;
+    color: #A9A9A9;
+    left: 68px;
+    top: 30px;
+}
+
+#emos-profile .actions{
+    position: absolute;
+    right: 20px;
+    top: 10px;
+}
+
+#emos-profile .actions.open{
+    z-index: 10000;
+}
+
+#emos-profile .actions > a > i{
+    font-size: 20px;
+}

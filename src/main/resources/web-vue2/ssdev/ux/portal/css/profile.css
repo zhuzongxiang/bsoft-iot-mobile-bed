@@ -1,0 +1,97 @@
+.topbar-user {
+	position: relative;
+	line-height: 15px;
+	width:270px;
+	font-size:14px;
+	color:#333;
+	max-height: 450px;
+}
+
+.topbar-user .topbar-user-avatar {
+	width: 50px;
+	height: 50px;
+	border-radius: 5px;
+	vertical-align: middle;
+	float: left;
+}
+.topbar-user-name{
+	line-height: 22px;
+	font-size: 14px;
+	color: #455a64;
+	margin-bottom: 6px;
+	margin-top: 1px;
+}
+.topbar-user .topbar-user-info {
+	/*text-align: center;*/
+	padding-top: 15px;
+	border-bottom: 1px solid #eaeaea;
+	padding: 15px 15px;
+	overflow: hidden;
+}
+.topbar-right{
+	float: left;
+	width: calc(100% - 50px);
+}
+.topbar-right p{
+	margin-left:15px !important;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.topbar-user .topbar-user-info .topbar-user-email {
+	margin: 0;
+	font-size: 14px;
+	color: #99abb4;
+}
+
+.topbar-user .topbar-user-entrance-list {
+	overflow: hidden;
+	margin: 8px 0;
+	padding: 8px 15px;
+}
+
+.topbar-user .topbar-user-entrance-list .topbar-user-entrance{
+	width: 80px;
+	height: 80px;
+	float: left;
+	text-align: center;
+	list-style:none;
+	font-size:14px;
+}
+
+.topbar-user .topbar-user-entrance-list .topbar-user-entrance a{
+	display:block;
+	width:100%;
+	height:100%;
+	text-decoration:none;
+	color: #333;
+}
+
+.topbar-user .topbar-user-entrance:hover {
+	background: #f5f5f5;
+	text-decoration: none;
+	border-radius: 5px;
+}
+
+.topbar-user .topbar-user-entrance-logo {
+	font-size: 22px;
+	margin: 8px auto 4px;
+	width: 40px;
+	height: 40px;
+	display: block;
+	line-height: 40px;
+	color: #788d9b;
+}
+
+.topbar-user .user-btn-link {
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	background-color: #f5f5f6;
+	cursor:pointer;
+}
+
+.topbar-user .user-btn-link a{
+	color: #333;
+	text-decoration: none;
+}

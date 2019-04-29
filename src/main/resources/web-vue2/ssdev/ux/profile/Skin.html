@@ -1,0 +1,17 @@
+<div class="skin-list">
+    <div>
+        <div class="back-forward">
+            <a href="#" @click="backClick"><i class="fa fas fa-angle-left"></i><span>返回</span></a>
+            <span class="skin-text">一键换肤</span>
+        </div>
+        <ul>
+            <li v-for="(item,index) in skinList">
+              <div :style="{background:item.color}" @click="choseSkin(index)">
+                <img v-show="index == skinSelected" src="resources/images/skin-selected.png" alt="">
+              </div>
+              <span>{{ item.na }}</span>
+            </li>
+        </ul>
+    </div>
+</div>
+

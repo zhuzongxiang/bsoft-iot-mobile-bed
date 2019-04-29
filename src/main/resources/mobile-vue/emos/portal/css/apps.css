@@ -1,0 +1,159 @@
+
+#emos-apps {
+    display: flex;
+    flex-direction: column;
+    flex:1
+}
+
+#emos-apps > .app-icons{
+    padding: 15px 0 5px 0;
+    flex: 1;
+}
+
+#emos-apps > .nav-tab{
+    height: 48px;
+}
+
+#emos-apps > .nav-tab > .mint-tab-item{
+    padding: 0px;
+}
+
+#emos-apps > .nav-tab .nav-tab-inner{
+    font-size: 1.2em;
+    line-height:48px;
+}
+
+
+#emos-apps > .app-icons{
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-bottom: 0px;
+    flex:1;
+    padding: 0px;
+    overflow:hidden;
+    -webkit-user-select: none;
+}
+
+#emos-apps > .app-icons > li{
+    text-decoration: none;
+    list-style: none;
+    display: inline-block;
+    margin-bottom: 5px;
+    transition: all 400ms;
+}
+
+#emos-apps > .app-icons > li.next-enter-active{
+    transform:translateY(40px);
+    opacity: 0;
+}
+
+#emos-apps > .app-icons > li.next-leave-active{
+    transform:translateY(-100px);
+    opacity: 0;
+}
+
+#emos-apps >  .app-icons > li.prev-enter-active{
+    opacity: 0;
+    transform:translateY(-40px);
+}
+
+#emos-apps >  .app-icons > li.prev-leave-active{
+    opacity: 0;
+    transform:translateY(100px);
+}
+
+
+#emos-apps > .app-icons > li.left-enter-active{
+    transform:translateX(-40px);
+    opacity: 0;
+}
+
+#emos-apps > .app-icons > li.left-leave-active{
+    opacity: 0;
+    transform:translateX(100px);
+}
+
+
+#emos-apps > .app-icons > li.right-enter-active{
+    opacity: 0;
+    transform:translateX(40px);
+}
+
+#emos-apps > .app-icons > li.right-leave-active{
+    opacity: 0;
+    transform:translateX(-100px);
+}
+
+
+#emos-apps > .app-icons > li >a{
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    width: 20vw;
+    max-width: 5em;
+    margin: 0.4em;
+    cursor: pointer;
+}
+
+#emos-apps > .app-icons > li >a > .badge{
+    position: absolute;
+    top: 3px;
+    right: 11px;
+    background-color: #BD6F2D;
+    border-radius: 5px;
+}
+
+#emos-apps > .app-icons > li > a > i{
+    font-size: 1.6em;
+    display: inline-block;
+    width: 1.7em;
+    height: 1.7em;
+    line-height: 1.7em;
+    border-radius: 20%;
+    background-color: rgba(77,187,137,0.96);
+    opacity: 0.90;
+    color: white;
+    box-shadow: 0px 1px 2px #A9A9A9;
+    transition: all;
+    transition-duration: 300ms;
+    position: relative;
+}
+
+#emos-apps > .app-icons > li > a > i:before{
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.15);
+}
+
+#emos-apps > .app-icons > li > a.loading{
+    pointer-events: none;
+    cursor: default;
+}
+
+#emos-apps > .app-icons > li > a.loading > i:after{
+    content: "";
+    position: absolute;
+    width: 1.7em;
+    height: 1.7em;
+    top:0;
+    left: 0;
+    border: 3px dotted #ffffff;
+    opacity: 0.6;
+    border-radius: 50%;
+    -webkit-animation: fa-spin 2.5s infinite linear;
+    animation: fa-spin 2.5s infinite linear;
+}
+
+#emos-apps > .app-icons > li > a.active > i {
+    box-shadow: 1px 1px 4px 1px rgba(255,0,0,0.33);
+}
+
+#emos-apps > .app-icons > li > a > span{
+    line-height: 18px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    color: #A9A9A9;
+    margin-top: 8px;
+    white-space: nowrap;
+    font-size: 0.72em;
+    max-font-size: 16px;
+}

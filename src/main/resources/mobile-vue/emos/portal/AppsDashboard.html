@@ -1,0 +1,19 @@
+<div id="emos-apps" class="card">
+    <transition-group class="app-icons" tag="ul" :name="animateDirection" mode="out-in">
+        <li v-for="m in appPageMods" :key="m.id">
+            <a :data-mid="m.id" :class="{'active' : m.active,'loading' : m.loading}" @click="appIconClick" href="javascript:void(0)">
+                <i :class="m.icon"/>
+                <span>{{m.name}}</span>
+                <div v-if="m.alerts > 0" class="badge">{{m.alerts}}</div>
+            </a>
+        </li>
+    </transition-group>
+    <v-tabs v-model="tabAppId" class="nav-tab" dark color="teal">
+        <v-tab :id="app.id" v-for="(app,index) in apps" :key="app.id">
+            <div @click="tabClick(index)" class="nav-tab-inner">
+                <i class="icon-tab" :class="app.icon"></i>
+                <span>{{app.name}}</span>
+            </div>
+        </v-tab>
+    </v-tabs>
+</div>

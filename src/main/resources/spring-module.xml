@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<s:beans xmlns:s="http://www.springframework.org/schema/beans"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.bsoft.com.cn/schema/ssdev"
+         xsi:schemaLocation="http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.bsoft.com.cn/schema/ssdev
+						http://www.bsoft.com.cn/schema/ssdev/ssdev.xsd">
+    <!--category node-->
+    <reference id="bbp.categoryLoader" interface="ctd.controller.ConfigurableLoader"/>
+    <s:bean id="categoryController" class="ctd.security.CategoryNodeController">
+        <s:property name="loader" ref="bbp.categoryLoader"></s:property>
+    </s:bean>
+    <s:bean id="categoryWatcher" class="ctd.security.CategoryNodeWatcher">
+        <s:property name="controller" ref="categoryController"/>
+    </s:bean>
+
+    <!--app-->
+    <reference id="bbp.appLoader" interface="ctd.app.loader.ApplicationLoader"/>
+    <reference id="bbp.appUpdater" interface="ctd.controller.updater.ConfigurableItemUpdater"/>
+    <s:bean id="appController" class="ctd.app.ApplicationController">
+        <s:property name="loader" ref="bbp.appLoader"/>
+        <s:property name="updater" ref="bbp.appUpdater"/>
+    </s:bean>
+    <s:bean id="appWatcher" class="ctd.app.ApplicationWatcher">
+        <s:property name="controller" ref="appController"/>
+    </s:bean>
+</s:beans>

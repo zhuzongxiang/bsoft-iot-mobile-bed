@@ -1,0 +1,86 @@
+@CHARSET "UTF-8";
+
+.quick {
+	position: absolute;
+	top: 0;
+	width: 100%;
+    height: 100%;
+    background-color: #EDEDED;
+    padding: 5px 10px;
+    overflow-y: auto;
+  /*  
+    -moz-background-size:100% 100%;
+    background-size:100% 100%;    */       /*  背景图片 自适应  */   
+    color: #383e4b;
+    border: 0;
+}
+.quick .container{
+    /*background-color: #fff;*/
+    height: 100%;
+    padding: 0;
+}
+.quick .container .history{
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    background-color: #fff;
+    width: 100%;
+}
+
+.quick .container .history div{
+    display: flex;
+    display: -webkit-flex;
+    justify-content: flex-end;
+}
+.quick .container .history .titles{
+    position: absolute;
+    left: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    text-indent: 16px;;
+}
+.quick .container .title{
+    margin-bottom: 26px;
+    font-size: 16px;
+    font-weight: bold;
+    /* padding: 10px; */
+    padding-bottom: 5px;
+    border-bottom: 1px solid #eee;
+}
+.quick .container .card{
+    display: flex;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+    margin-bottom: 0;
+    padding-bottom: 30px;
+    box-shadow: 0 0 0 #fff;
+}
+.quick .container .card button{
+    margin-right: 5px;
+    margin-bottom: 9px;
+    margin-left: 0;
+    padding: 10px 33px;
+    width: calc(97%/3);
+}
+.quick .container .card button:nth-of-type(3n) {
+    margin-right: 0;
+}
+.quick .container .card .el-card__body{
+    background-color: #409EFF;
+    color: #fff;
+}
+
+.quick .container .card .el-card{
+    margin-right: 10px;
+    cursor: pointer;
+}
+.quick .content{
+    background-color: #fff;
+    margin-bottom: 5px;
+    width: calc(100%/3);
+    float: left;
+}
+
+.quick .contents{
+    display: flex;
+    flex-wrap: wrap;
+}
