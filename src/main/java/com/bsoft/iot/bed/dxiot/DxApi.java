@@ -50,12 +50,13 @@ public class DxApi {
         headerMap.put("Authorization", "Bearer " + getAccessToken());
         JSONObject object = new JSONObject();
         object.put("notifyType", "deviceInfoChanged");
-        object.put("callbackurl", "https://lab.bsoft.com.cn:443/iot-bed/bsiot-moblie-bed-1.0/dx/deviceChange");
+        object.put("callbackurl", "https://lab.bsoft.com.cn:443/iot-bed/bsiot-moblie-bed-1.0/dx/deviceInfoChanged");
         HttpResponse infoChangeHttpResponse = HttpsUtil.doPostJson(DxApiConstant.SUBSCRIBE, headerMap, object.toJSONString());
         String infoChangeBodySubscribe = HttpsUtil.getHttpResponseBody(infoChangeHttpResponse);
         System.out.print("res:" + infoChangeHttpResponse.getStatusLine());
         LOGGER.info("res is {}", infoChangeBodySubscribe);
         object.put("notifyType", "deviceDataChanged");
+        object.put("callbackurl", "https://lab.bsoft.com.cn:443/iot-bed/bsiot-moblie-bed-1.0/dx/deviceDataChanged");
         HttpResponse dataChangeHttpResponse = HttpsUtil.doPostJson(DxApiConstant.SUBSCRIBE, headerMap, object.toJSONString());
         String dataChangeBodySubscribe = HttpsUtil.getHttpResponseBody(dataChangeHttpResponse);
         System.out.print("res:" + dataChangeHttpResponse.getStatusLine());

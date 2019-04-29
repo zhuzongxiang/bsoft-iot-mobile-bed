@@ -15,11 +15,30 @@ public class DxCallbackController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(DxCallbackController.class);
 
-    @PostMapping("/deviceChange")
-    public String callback(@RequestBody JSONObject modifyDeviceInfo_NotifyMessage) {
-        LOGGER.info("modifyDeviceInfo_NotifyMessage is {}", modifyDeviceInfo_NotifyMessage);
-        JSONObject jsonObject = JSONObject.parseObject(JSONObject.toJSONString(modifyDeviceInfo_NotifyMessage));
-        return modifyDeviceInfo_NotifyMessage.toString();
+    /**
+     * 设备信息变化回调
+     *
+     * @param json
+     * @return
+     */
+    @PostMapping("/deviceInfoChanged")
+    public String deviceInfoChanged(@RequestBody JSONObject json) {
+        LOGGER.info("modifyDeviceInfo_NotifyMessage is {}", json);
+        JSONObject jsonObject = JSONObject.parseObject(JSONObject.toJSONString(json));
+        return json.toString();
+    }
+
+    /**
+     * 设备数据变化
+     *
+     * @param json
+     * @return
+     */
+    @PostMapping("/deviceDataChanged")
+    public String deviceDataChanged(@RequestBody JSONObject json) {
+        LOGGER.info("modifyDeviceInfo_NotifyMessage is {}", json);
+        JSONObject jsonObject = JSONObject.parseObject(JSONObject.toJSONString(json));
+        return json.toString();
     }
 
     @GetMapping("/open")
