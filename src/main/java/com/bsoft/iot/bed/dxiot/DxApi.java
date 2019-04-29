@@ -13,6 +13,10 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author zzx
@@ -25,12 +29,36 @@ public class DxApi {
 
     private static RestTemplate restTemplate = SpringBeanUtil.getBean(RestTemplate.class);
 
+    private static ScheduledExecutorService timer = new ScheduledThreadPoolExecutor(1, r -> {
+        Thread thread = new Thread(r);
+        thread.setDaemon(true);
+        return thread;
+    });
+
     public static void init() {
         try {
             auth();
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    private static void initTimer() {
+        long expireTime = Long.valueOf(dxAccessToken.getExpiresIn()) * 2 / 3;
+        long delay = (long) (100 * (new Random().nextDouble()));
+        timer.scheduleAtFixedRate(() -> {
+            try {
+                refreshToken();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }, delay, expireTime, TimeUnit.SECONDS);
+        Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
+            @Override
+            public void run() {
+                timer.shutdown();
+            }
+        }));
     }
 
     private static void auth() throws Exception {
@@ -44,6 +72,7 @@ public class DxApi {
             return;
         }
         dxAccessToken = JSONObject.parseObject(res, DxAccessToken.class);
+        initTimer();
         Map<String, String> headerMap = new HashMap<>();
         headerMap.put("Content-Type", "application/json");
         headerMap.put("app_key", DxConstant.APP_ID);
@@ -65,6 +94,23 @@ public class DxApi {
 
     public static String getAccessToken() {
         return dxAccessToken.getAccessToken();
+    }
+
+    private static String getRefreshToken() {
+        return dxAccessToken.getRefreshToken();
+    }
+
+    public static void refreshToken() throws Exception {
+        Map<String, String> mParam = new HashMap<String, String>(2);
+        mParam.put("appId", DxConstant.APP_ID);
+        mParam.put("secret", DxConstant.SECRET);
+        mParam.put("refreshToken", getRefreshToken());
+        String res = HttpsUtil.doPostFormUrlEncodedForString(DxApiConstant.AUTH_API, mParam);
+        LOGGER.info("res is {}", res);
+        if (StringUtils.isBlank(res)) {
+            return;
+        }
+        dxAccessToken = JSONObject.parseObject(res, DxAccessToken.class);
     }
 
     public static String openLock() throws Exception {
